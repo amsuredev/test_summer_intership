@@ -1,0 +1,1 @@
+class Segment(val startPoint: Point, val endPoint: Point)

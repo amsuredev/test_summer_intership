@@ -4,14 +4,11 @@ class CSVReader {
     fun getParsedDatas(): MutableList<List<String>>{
         val listOfFigures = mutableListOf<List<String>>()
         try {
-
             var lines: List<String> = File(FILEPATH).readLines()
             lines.forEach{line -> listOfFigures.add(line.split(SEPARATOR))}
         }
         catch(e: Exception){
             e.printStackTrace()
-        }finally{
-            println("CSV READ FINISHED")
         }
         return listOfFigures
     }

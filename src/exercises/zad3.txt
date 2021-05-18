@@ -1,0 +1,4 @@
+Srednia dlugosc Lamancyh: 23639.522864832663
+Ilosc lamanych przecinajacych samych siebie: 17443
+Minimalny prostokat: leftDownPoint x: 1 y: 1
+Top right point x: 9999 y: 9999
