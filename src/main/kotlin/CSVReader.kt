@@ -18,7 +18,7 @@ class CSVReader {
         var notMatchedIndexesCircle = mutableListOf<String>()
         for (line in parsedData){
             if (line[1] == "C"){
-                val circle: Circle? = Circle.createCircleByString(line[0], line[2])
+                val circle: Circle? = Circle.create(line[0], line[2])
                 if (circle != null){
                     matchedCircle.add(circle)
                 }else{
@@ -34,7 +34,7 @@ class CSVReader {
         var notMatchedIndexesRectangle = mutableListOf<String>()
         for (line in parsedData){
             if (line[1] == "R"){
-                val rectangle: Rectangle? = Rectangle.createRectangleByString(line[0], line[2])
+                val rectangle: Rectangle? = Rectangle.create(line[0], line[2])
                 if (rectangle != null){
                     matchedRectangle.add(rectangle)
                 }else{
@@ -45,12 +45,12 @@ class CSVReader {
         return Pair(matchedRectangle, notMatchedIndexesRectangle)
     }
 
-    fun getMatchedBroken(parsedData: MutableList<List<String>> = getParsedDatas()): Pair<MutableList<Broken>, MutableList<String>> {
-        var matchedBroken = mutableListOf<Broken>()
+    fun getMatchedBroken(parsedData: MutableList<List<String>> = getParsedDatas()): Pair<MutableList<BrokenLine>, MutableList<String>> {
+        var matchedBroken = mutableListOf<BrokenLine>()
         var notMatchedIndexesBroken = mutableListOf<String>()
         for (line in parsedData){
             if (line[1] == "L"){
-                val broken: Broken? = Broken.createBroken(line[0], line[2])
+                val broken: BrokenLine? = BrokenLine.create(line[0], line[2])
                 if (broken != null){
                     matchedBroken.add(broken)
                 }else{

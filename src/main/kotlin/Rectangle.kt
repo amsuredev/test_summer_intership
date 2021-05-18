@@ -3,7 +3,7 @@ import kotlin.math.min
 
 data class Rectangle(override val id: Int, val leftDownPoint: Point, val rightUpPoint: Point) : Figure(id) {
     companion object {
-        fun createRectangleByString(idString: String, line: String): Rectangle? {
+        fun create(idString: String, line: String): Rectangle? {
             val id = idString.toInt()
             val values = line.split(SEPARATORVALUES)
             if (values.count() != 2) {

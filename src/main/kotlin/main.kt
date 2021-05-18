@@ -29,7 +29,7 @@ fun writeToFile(file_name: String = "src/exercises/zad1.txt", content: List<Stri
     }
 }
 
-fun mediumLengthOfBroken(brokens: List<Broken>): Double {
+fun mediumLengthOfBroken(brokens: List<BrokenLine>): Double {
     return getFullLength(brokens) / brokens.count()
 }
 
@@ -58,7 +58,7 @@ fun getNumGeometries(vararg figures: List<Figure>): Int {
     return geometries.count()
 }
 
-fun getContentEx2(circles: List<Circle>, rectangles: List<Rectangle>, brokens: List<Broken>): List<String> {
+fun getContentEx2(circles: List<Circle>, rectangles: List<Rectangle>, brokens: List<BrokenLine>): List<String> {
     var ex2Content = mutableListOf<String>()
     ex2Content.add("Calkowita Dlugosc: " + getFullLength(circles, rectangles, brokens))
     ex2Content.add("Pole powierzchi prostokatow: " + getCircleRectangleSquare(circles, rectangles))
@@ -68,7 +68,7 @@ fun getContentEx2(circles: List<Circle>, rectangles: List<Rectangle>, brokens: L
     return ex2Content
 }
 
-fun countCrossBySelfBroken(brokens: List<Broken>): Int {
+fun countCrossBySelfBroken(brokens: List<BrokenLine>): Int {
     var count = 0
     for (broken in brokens) {
         if (broken.crossBySelf()) {
@@ -101,7 +101,7 @@ fun getMinBoundRectangle(vararg figures_p: List<Figure>): String {
             "\n" + "Top right point x: " + minXMaxXMinYMaxY[1] + " y: " + minXMaxXMinYMaxY[3]
 }
 
-fun getContentEx3(circles: List<Circle>, rectangles: List<Rectangle>, brokens: List<Broken>): List<String>{
+fun getContentEx3(circles: List<Circle>, rectangles: List<Rectangle>, brokens: List<BrokenLine>): List<String>{
     return listOf<String>("Srednia dlugosc Lamancyh: " + mediumLengthOfBroken(brokens),
     "Ilosc lamanych przecinajacych samych siebie: " + countCrossBySelfBroken(brokens),
     "Minimalny prostokat: " + getMinBoundRectangle(circles, rectangles, brokens)

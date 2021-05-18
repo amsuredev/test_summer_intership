@@ -2,7 +2,7 @@ import kotlin.math.*
 
 data class Circle(override val id: Int, val radius: Int, val center: Point) : Figure(id) {
     companion object {
-        fun createCircleByString(idString: String, line: String): Circle? {
+        fun create(idString: String, line: String): Circle? {
             val id = idString.toInt()
             val values = line.split(SEPARATORVALUES)
             if (values.count() != 2) {

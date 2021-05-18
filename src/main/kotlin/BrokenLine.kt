@@ -2,9 +2,9 @@ import java.awt.geom.Line2D
 import kotlin.math.pow
 import kotlin.math.sqrt
 
-data class Broken(override val id: Int, val points: List<Point>) : Figure(id) {
+data class BrokenLine(override val id: Int, val points: List<Point>) : Figure(id) {
     companion object {
-        fun createBroken(idString: String, line: String): Broken? {
+        fun create(idString: String, line: String): BrokenLine? {
             val points = mutableListOf<Point>()
             val id = idString.toInt()
             val values = line.split(SEPARATORVALUES)
@@ -25,7 +25,7 @@ data class Broken(override val id: Int, val points: List<Point>) : Figure(id) {
                     }
                     points.add(Point(coordinatesToAdd[0], coordinatesToAdd[1]))
                 }
-                return Broken(id, points)
+                return BrokenLine(id, points)
             } catch (e: Exception) {
                 return null
             }
