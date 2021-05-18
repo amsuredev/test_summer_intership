@@ -1,3 +1,5 @@
+import kotlin.math.*
+
 data class Circle(override val id: Int, val radius: Int, val center: Point) : Figure(id) {
     companion object {
         fun createCircleByString(idString: String, line: String): Circle? {
@@ -28,4 +30,14 @@ data class Circle(override val id: Int, val radius: Int, val center: Point) : Fi
         val SEPARATORVALUES: String = ";"
         val SEPARATOR_POINT_COORD = "-"
     }
+
+    fun square(): Double {
+        return PI * radius.toDouble().pow(2.0)
+    }
+
+    override fun length(): Double {
+        return 2 * PI * radius
+    }
+
+
 }

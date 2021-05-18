@@ -1,3 +1,7 @@
+import kotlin.math.abs
+import kotlin.math.pow
+import kotlin.math.sqrt
+
 data class Broken (override val id: Int, val points: List<Point>): Figure(id){
     companion object {
         fun createBroken(idString: String, line: String): Broken? {
@@ -32,5 +36,13 @@ data class Broken (override val id: Int, val points: List<Point>): Figure(id){
 
         val SEPARATORVALUES: String = ";"
         val SEPARATOR_POINT_COORD = "-"
+    }
+
+    override fun length(): Double {
+        var length = 0.0
+        for (i in 1 until points.size){
+            length += sqrt((points[i].x - points[i-1].x).toDouble().pow(2) + (points[i].y - points[i-1].y).toDouble().pow(2))
+        }
+        return length
     }
 }

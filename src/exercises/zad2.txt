@@ -1,0 +1,5 @@
+Calkowita Dlugosc: 1.2373219440507152E9
+Pole powierzchi prostokatow: 3.659094805312725E11
+Liczba geometrii Okrag: 32631
+Liczba geometrii Prostokat: 33433
+Liczba geometrii Lamana: 33101

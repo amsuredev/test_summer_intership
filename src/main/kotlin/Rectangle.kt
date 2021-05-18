@@ -1,5 +1,7 @@
+import kotlin.math.PI
 import kotlin.math.max
 import kotlin.math.min
+import kotlin.math.pow
 
 data class Rectangle (override val id: Int, val leftDownPoint: Point, val rightUpPoint: Point): Figure(id){
     companion object {
@@ -33,4 +35,14 @@ data class Rectangle (override val id: Int, val leftDownPoint: Point, val rightU
         val SEPARATORVALUES: String = ";"
         val SEPARATOR_POINT_COORD = "-"
     }
+
+    fun square(): Double {
+        return (rightUpPoint.x - leftDownPoint.x) * (rightUpPoint.y - leftDownPoint.y).toDouble()
+    }
+
+    override fun length(): Double {
+        return (2 * (rightUpPoint.x - leftDownPoint.x) + 2 * (rightUpPoint.y - leftDownPoint.y)).toDouble()
+    }
+
+
 }
