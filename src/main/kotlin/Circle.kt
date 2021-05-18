@@ -8,7 +8,6 @@ data class Circle(override val id: Int, val radius: Int, val center: Point) : Fi
             }
             try {
                 val radius: Int = values[1].toInt()
-
                 val coordString = values[0].split(SEPARATOR_POINT_COORD)
                 val x = coordString[0].toInt()
                 val y = coordString[1].toInt()

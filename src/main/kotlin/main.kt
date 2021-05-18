@@ -4,14 +4,13 @@ import java.nio.file.Paths*/
 import java.io.File
 
 fun main(args: Array<String>) {
-   /* val reader = Files.newBufferedReader(Paths.get("src/main/resources/figures.csv"))
-    // TODO CATCH NOSUCHFILE EXCEPTION
-    val csvParser = (reader, CSVFormat.DEFAULT)*/
     val reader = CSVReader()
+    val data = reader.getParsedDatas()
     val circles = reader.getMatchedCircle()
+    val rectangles = reader.getMatchedRectangle()
+    val broken = reader.getMatchedBroken()
     val a = 5
-//    val b = mutableListOf<Point>(Point(5, 3))
-//    b.add()
 }
+
 
 

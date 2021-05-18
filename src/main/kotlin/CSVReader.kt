@@ -19,7 +19,6 @@ class CSVReader {
     fun getMatchedCircle(parsedData: MutableList<List<String>> = getParsedDatas()): Pair<MutableList<Circle>, MutableList<String>> {
         var matchedCircle = mutableListOf<Circle>()
         var notMatchedIndexesCircle = mutableListOf<String>()
-        val a = 5
         for (line in parsedData){
             if (line[1] == "C"){
                 val circle: Circle? = Circle.createCircleByString(line[0], line[2])
@@ -33,10 +32,40 @@ class CSVReader {
         return Pair(matchedCircle, notMatchedIndexesCircle)
     }
 
+    fun getMatchedRectangle(parsedData: MutableList<List<String>> = getParsedDatas()): Pair<MutableList<Rectangle>, MutableList<String>> {
+        var matchedRectangle = mutableListOf<Rectangle>()
+        var notMatchedIndexesRectangle = mutableListOf<String>()
+        for (line in parsedData){
+            if (line[1] == "R"){
+                val rectangle: Rectangle? = Rectangle.createRectangleByString(line[0], line[2])
+                if (rectangle != null){
+                    matchedRectangle.add(rectangle)
+                }else{
+                    notMatchedIndexesRectangle.add(line[0])
+                }
+            }
+        }
+        return Pair(matchedRectangle, notMatchedIndexesRectangle)
+    }
+
+    fun getMatchedBroken(parsedData: MutableList<List<String>> = getParsedDatas()): Pair<MutableList<Broken>, MutableList<String>> {
+        var matchedBroken = mutableListOf<Broken>()
+        var notMatchedIndexesBroken = mutableListOf<String>()
+        for (line in parsedData){
+            if (line[1] == "L"){
+                val broken: Broken? = Broken.createBroken(line[0], line[2])
+                if (broken != null){
+                    matchedBroken.add(broken)
+                }else{
+                    notMatchedIndexesBroken.add(line[0])
+                }
+            }
+        }
+        return Pair(matchedBroken, notMatchedIndexesBroken)
+    }
+
     companion object{
         var FILEPATH = "src/main/resources/figures.csv"
         val SEPARATOR = ","
-        val MINZONE = 0
-        val MAXZONE = 10000
     }
 }
